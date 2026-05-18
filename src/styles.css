@@ -629,8 +629,8 @@ textarea {
   width: 44px;
   height: 40px;
   background: rgba(64, 84, 62, 0.14);
-  -webkit-mask: url("/cat-front.png") center / contain no-repeat;
-  mask: url("/cat-front.png") center / contain no-repeat;
+  -webkit-mask: var(--cat-mask) center / contain no-repeat;
+  mask: var(--cat-mask) center / contain no-repeat;
   animation: cat-shadow-stroll 12s ease-in-out infinite;
 }
 
@@ -773,8 +773,8 @@ textarea {
   background-repeat: no-repeat;
   background-position: center 18%;
   background-size: 142% auto;
-  -webkit-mask: url("/cat-front.png") center / 96% 96% no-repeat;
-  mask: url("/cat-front.png") center / 96% 96% no-repeat;
+  -webkit-mask: var(--cat-mask) center / 96% 96% no-repeat;
+  mask: var(--cat-mask) center / 96% 96% no-repeat;
   filter: drop-shadow(0 10px 12px rgba(72, 42, 20, 0.24));
   pointer-events: none;
 }

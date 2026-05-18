@@ -290,6 +290,10 @@ const coverMotionStyle = computed(() => ({
   '--pointer-x': `${pointer.x}px`,
   '--pointer-y': `${pointer.y}px`
 }))
+
+const catMaskStyle = computed(() => ({
+  '--cat-mask': `url(${asset('cat-front.png')})`
+}))
 const celebrationPieces = computed(() => {
   return Array.from({ length: 10 }, (_, index) => ({
     id: `piece-${currentIndex.value}-${index}`,
@@ -624,7 +628,7 @@ function stopAmbience() {
     </section>
   </main>
 
-  <main v-else class="app-shell" @pointerdown="handleAppPointerDown">
+  <main v-else class="app-shell" :style="catMaskStyle" @pointerdown="handleAppPointerDown">
     <aside class="control-panel">
       <header class="brand">
         <div>
