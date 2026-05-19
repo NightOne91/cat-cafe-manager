@@ -769,12 +769,8 @@ textarea {
 .cat-art-image {
   width: 126%;
   height: 126%;
-  background-image: var(--cat-image);
-  background-repeat: no-repeat;
-  background-position: center 18%;
-  background-size: 142% auto;
-  -webkit-mask: var(--cat-mask) center / 96% 96% no-repeat;
-  mask: var(--cat-mask) center / 96% 96% no-repeat;
+  display: block;
+  object-fit: contain;
   filter: drop-shadow(0 10px 12px rgba(72, 42, 20, 0.24));
   pointer-events: none;
 }

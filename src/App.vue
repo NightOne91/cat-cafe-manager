@@ -290,10 +290,6 @@ const coverMotionStyle = computed(() => ({
   '--pointer-x': `${pointer.x}px`,
   '--pointer-y': `${pointer.y}px`
 }))
-
-const catMaskStyle = computed(() => ({
-  '--cat-mask': `url(${asset('cat-front.png')})`
-}))
 const celebrationPieces = computed(() => {
   return Array.from({ length: 10 }, (_, index) => ({
     id: `piece-${currentIndex.value}-${index}`,
@@ -628,7 +624,7 @@ function stopAmbience() {
     </section>
   </main>
 
-  <main v-else class="app-shell" :style="catMaskStyle" @pointerdown="handleAppPointerDown">
+  <main v-else class="app-shell" @pointerdown="handleAppPointerDown">
     <aside class="control-panel">
       <header class="brand">
         <div>
@@ -740,12 +736,13 @@ function stopAmbience() {
               @click.stop="handleUnitClick(unit, $event)"
             >
               <span v-if="unit.type === 'guest'">客</span>
-              <span
+              <img
                 v-else
                 class="cat-art-image"
-                :style="{ '--cat-image': `url(${getCatSprite(unit.color)})` }"
+                :src="getCatSprite(unit.color)"
+                :alt="unit.name"
                 aria-hidden="true"
-              ></span>
+              />
               <small>{{ unit.label ?? unit.name }}</small>
             </div>
           </div>
@@ -762,12 +759,13 @@ function stopAmbience() {
               @click.stop="handleUnitClick(unit, $event)"
             >
               <span v-if="unit.type === 'guest'">客</span>
-              <span
+              <img
                 v-else
                 class="cat-art-image"
-                :style="{ '--cat-image': `url(${getCatSprite(unit.color)})` }"
+                :src="getCatSprite(unit.color)"
+                :alt="unit.name"
                 aria-hidden="true"
-              ></span>
+              />
               <small>{{ unit.label ?? unit.name }}</small>
             </div>
           </div>
